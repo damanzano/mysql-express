@@ -39,6 +39,7 @@ app.use(express.static(__dirname + '/public'));
 // Configurar las rutas en archivos separados
 app.use('/users', userRouter);
 
+// Configurar el puerto por defecto
 app.set('port', (process.env.PORT || 3000));
 
 // Configurar la conexión a la base de datos
@@ -54,8 +55,7 @@ databse.connect(databse.MODE_PRODUCTION, function(err) {
 		// var port = 3000;
 
 		app.listen(app.get('port'), function() {
-			console.log('Servidor corriendo en el puerto:' + app.get('port')
-					+ '/');
+			console.log('Servidor corriendo en el puerto:' + app.get('port'));
 		});
 	}
 });
